@@ -16,6 +16,15 @@ And then execute:
 
     $ bundle install
 
+## ENV
+
+```shell
+CHINACHU_API_ENDPOINT     - API endpont address you Chinachu server
+CHINACHU_LOGIN            - BASIC login name (Option: if you use BASIC Auth)
+CHINACHU_PASSWORD         - BASIC login pass (Option: if you use BASIC Auth)
+CHINACHU_PROGRAM_FORMAT   - Output program summary format string
+```
+
 ## Usage
 
 ```shell
