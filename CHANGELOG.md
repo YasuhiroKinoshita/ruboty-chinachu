@@ -1,3 +1,9 @@
+# 0.2.1
+
+Fix
+
+- channel->channels
+
 # 0.2.0
 
 Feature
