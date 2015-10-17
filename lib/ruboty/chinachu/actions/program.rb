@@ -15,6 +15,18 @@ module Ruboty
           end
         end
 
+        def delete_reservation
+          begin
+            program = chinachu.reserves_program(program_id)
+            chinachu.delete_reserved_program(program_id)
+            message.reply("Delete reservation #{summary(program, PROGRAM_FORMAT)}")
+          rescue Goraku::Status404
+            message.reply("Id #{program_id} is not reserved")
+          rescue
+            message.reply("Delete reservation #{program_id} faild")
+          end
+        end
+
         private
 
         def program_id
