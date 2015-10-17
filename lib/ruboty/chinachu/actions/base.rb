@@ -10,7 +10,7 @@ module Ruboty
         end
 
         def chinachu_options
-          opts = {api_endpoint: ENV['CHINACHU_API_ENDPOINT']}
+          opts = {api_endpoint: ENV['CHINACHU_API_ENDPOINT'], raise_error: true}
           return opts unless ENV['CHINACHU_LOGIN'] || ENV['CHINACHU_PASSWORD']
           opts[:login]     = ENV['CHINACHU_LOGIN']
           opts[:password]  = ENV['CHINACHU_PASSWORD']
