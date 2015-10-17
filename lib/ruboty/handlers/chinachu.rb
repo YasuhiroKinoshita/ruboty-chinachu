@@ -8,15 +8,15 @@ module Ruboty
   module Handlers
     class Chinachu < Ruboty::Handlers::Base
 
-      env :CHINACHU_API_ENDPOINT, "chinachu api endpoint"
+      env :CHINACHU_API_ENDPOINT, "Chinachu api endpoint"
       env :CHINACHU_LOGIN, "Login name for Chinachu server's basic authentication", optional: true
       env :CHINACHU_PASSWORD, "Login pass for Chinachu server's basic authentication", optional: true
-      env :CHINACHU_PROGRAM_FORMAT, "program output string format", optional: true
+      env :CHINACHU_PROGRAM_FORMAT, "Program output string format", optional: true
 
-      on( /list reserved/, name: :daily_reservation_list, description: "show today's reservations list")
-      on( /list broadcasting/, name: :list_broadcasting, description: "broadcasting programs")
-      on( /list recording/, name: :list_recording, description: "recording programs")
-      on( /list recorded/, name: :list_recorded, description: "recorded programs in this 24 hours")
+      on( /list reserved/, name: :daily_reservation_list, description: "Show today's reservations list")
+      on( /list broadcasting/, name: :list_broadcasting, description: "Broadcasting programs")
+      on( /list recording/, name: :list_recording, description: "Recording programs")
+      on( /list recorded/, name: :list_recorded, description: "Recorded programs in this 24 hours")
       on( /list channel/, name: :list_channel, description: "Show all channel list")
       on( /list program schedule (?<channel_id>.+)/, name: :list_schedule, description: "Show today's channel schedule")
       on( /reserve program (?<program_id>.+)/, name: :reserve, description: "Reserve Program")
