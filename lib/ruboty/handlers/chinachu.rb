@@ -2,6 +2,7 @@ require 'ruboty/chinachu/actions/reserves'
 require 'ruboty/chinachu/actions/schedule'
 require 'ruboty/chinachu/actions/recording'
 require 'ruboty/chinachu/actions/recorded'
+require 'ruboty/chinachu/actions/program'
 
 module Ruboty
   module Handlers
@@ -16,6 +17,7 @@ module Ruboty
       on( /list broadcasting/, name: :list_broadcasting, description: "broadcasting programs")
       on( /list recording/, name: :list_recording, description: "recording programs")
       on( /list recorded/, name: :list_recorded, description: "recorded programs in this 24 hours")
+      on( /reserve program (?<program_id>.+)/, name: :reserve, description: "Reserve Program")
 
       def daily_reservation_list(message)
         Ruboty::Chinachu::Actions::Reserves.new(message).call
@@ -31,6 +33,10 @@ module Ruboty
 
       def list_recorded(message)
         Ruboty::Chinachu::Actions::Recorded.new(message).call
+      end
+
+      def reserve(message)
+        Ruboty::Chinachu::Actions::Program.new(message).reserve
       end
     end
   end
