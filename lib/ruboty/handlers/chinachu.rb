@@ -17,6 +17,7 @@ module Ruboty
       on( /list broadcasting/, name: :list_broadcasting, description: "broadcasting programs")
       on( /list recording/, name: :list_recording, description: "recording programs")
       on( /list recorded/, name: :list_recorded, description: "recorded programs in this 24 hours")
+      on( /list channel/, name: :list_channel, description: "Show all channel list")
       on( /reserve program (?<program_id>.+)/, name: :reserve, description: "Reserve Program")
       on( /delete reservation (?<program_id>.+)/, name: :delete_reservation, description: "Delete reserved Program")
 
@@ -34,6 +35,10 @@ module Ruboty
 
       def list_recorded(message)
         Ruboty::Chinachu::Actions::Recorded.new(message).call
+      end
+
+      def list_channel(message)
+        Ruboty::Chinachu::Actions::Schedule.new(message).list_channels
       end
 
       def reserve(message)
