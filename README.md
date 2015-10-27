@@ -16,6 +16,10 @@ And then execute:
 
     $ bundle install
 
+## dependency
+
+Latest Chinachu required
+
 ## ENV
 
 ```shell
