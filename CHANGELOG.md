@@ -1,3 +1,9 @@
+# 0.2.2
+
+Feature
+
+- skip and unskip program
+
 # 0.2.1
 
 Fix
