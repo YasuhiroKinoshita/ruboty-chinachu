@@ -14,7 +14,7 @@ module Ruboty
           after_twenty_four_hour = current + (60 * 60 * 24)
           reservation_list.select do |program|
             record_start_at = Time.at(program.start / 1000)
-            ! program.isSkip && current < record_start_at && record_start_at < after_twenty_four_hour
+            ! program.isSkip && record_start_at.between?(current, after_twenty_four_hour)
           end
         end
 

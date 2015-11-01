@@ -18,7 +18,7 @@ module Ruboty
           begin
             programs = schedules.select do |program|
               start_at = Time.at(program.start / 1000)
-              current < start_at && start_at < after_twenty_four_hour
+              start_at.between?(current, after_twenty_four_hour)
             end
             message.reply(programs.map { |p| summary(p, PROGRAM_FORMAT) }.join("\n"), code: true)
           rescue

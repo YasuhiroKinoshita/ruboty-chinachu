@@ -12,7 +12,7 @@ module Ruboty
           before_twenty_four_hour = current - (60 * 60 * 24)
           recorded.select do |program|
             record_end_at = Time.at(program.end / 1000)
-            before_twenty_four_hour < record_end_at && record_end_at < current
+            record_end_at.between?(before_twenty_four_hour, current)
           end
         end
 
